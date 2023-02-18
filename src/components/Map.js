@@ -32,7 +32,7 @@ function Map(props) {
         
          
     return (
-      <div id="map">
+      <div id="map" className={styles.map}>
         <h2 className={styles.description}>This is a map placeholder</h2>
         
       </div>
