@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.auth_buttons > div > button {
+    margin: 1rem;
+}
+

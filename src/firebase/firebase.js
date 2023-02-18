@@ -6,6 +6,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth"; // auth
 import { getFirestore } from "firebase/firestore"; // firestore
 import { getDatabase } from "firebase/database"; // rtdb
+import { Athiti } from "@next/font/google";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -22,13 +23,12 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 // Initialize Firebase Authentication and get a reference to the service
-const auth = getAuth(app);
+export const auth = getAuth();
 
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 // Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
+export const database = getDatabase(app);
