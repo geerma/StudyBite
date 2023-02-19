@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Head>
         <title>Restudy</title>
-        <meta name="description" content="Rate restaurnay and study place on campus" /
+        <meta name="description" content="Rate restaurnay and study place on campus" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -38,7 +38,7 @@ export default function Home() {
         <MapAsset />
         {clickBool?
         <div className={styles.darkBg} onClick={handleClick}>
-          <RestaurantCard name={"test name"} restId={restId} rating={3} hours={"temp hours"} description={"Hello World"}/>
+          <RestaurantCard name={"test name"} restId={restId} rating={3} hours={"5:30pm"} description={"Hello World"} waiting={"18"}/>
         </div>
         :""
         }

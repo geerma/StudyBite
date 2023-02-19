@@ -1,6 +1,9 @@
 .navbar {
     display: flex;
     flex-direction: row;
+    background-color: var(--secondaryT);
+    position: fixed;
+    width: 100%;
 }
 
 .auth_buttons > div > button {
