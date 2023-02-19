@@ -1,4 +1,5 @@
 import styles from "@/styles/Navbar.module.css";
+import homestyles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import Login from "./login";
 import Register from "./register";

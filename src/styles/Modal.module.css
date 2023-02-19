@@ -1,4 +1,16 @@
 
+/* .darkBg{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position:absolute;
+    top: 0;
+  } */
+  .row{
+    display: flex;
+    width: 45%;
+    justify-content: center;
+  }
 /* card body */
 .card{
     padding: 1rem;
@@ -15,10 +27,22 @@
     justify-content: center;
     gap: .5rem;
 }
-.card h3{
-    font-size: 3rem;
+.card h3,.card h4{
+    font-size: 2rem;
     color: var(--primary);
     font-family: 'Asul', sans-serif;
+    text-align: center;
+}
+.card ul{
+    padding: 0;
+}
+.card li{
+    list-style: none;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--neutral);
+    margin: .5rem 0;
+    border-radius: 1.5rem;
 }
 .openStatus{
     color: var(--primary);

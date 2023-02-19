@@ -184,6 +184,14 @@
 .mapContainer svg {
   width: 1200px;
 }
+.navbar{
+  background-color: var(--secondary);
+}
+.mapContainer .navbar{
+  background-color: var(--secondaryT);
+    position: fixed;
+    width: 100%;
+}
 /* Conic Gradient Animation */
 .thirteen::before {
   animation: 6s rotate linear infinite;
@@ -203,6 +211,26 @@
     rgba(var(--tile-end-rgb), 1)
   );
   background-clip: content-box;
+}
+.drawerBtn{
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--neutral);
+  border-radius: unset;
+  color: var(--primary);
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.smallBtn{
+  padding: .3rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 50%;
 }
 
 /* Enable hover only on non-touch devices */
@@ -230,7 +258,7 @@
 /* Mobile */
 @media (max-width: 700px) {
   .content {
-    padding: 4rem;
+    padding: 2rem;
   }
 
   .grid {

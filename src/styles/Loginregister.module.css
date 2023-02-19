@@ -55,6 +55,7 @@
   font-size: 24px;
 }
 
+
 .inputs > input {
   width: 20rem;
   margin: 10px;
@@ -78,4 +79,5 @@
   .loginregister_box {
     width: 100%;
   }
+
 }
