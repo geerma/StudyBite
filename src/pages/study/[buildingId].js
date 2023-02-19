@@ -71,7 +71,7 @@ export default function StudyreviewsPage() {
         ))}
         {selectSection != undefined && <div className={styles.section_buttons}><button onClick={() => setSelectSection(undefined)}>All Sections</button> </div>}
         {selectSection != undefined
-          ? sectionData[selectSection - 1].reviews.map((review, id) => (
+          ? sectionData[selectSection-1].reviews.map((review, id) => (
               <StudyReviews review={review} key={id} />
             ))
           : null}
