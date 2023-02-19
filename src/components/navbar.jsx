@@ -52,13 +52,10 @@ const Navbar = () => {
     router.push('/');
   }
 
-  const handleCart = () => {
-    // Go to index
-    console.log("Go to Cart");
-  }
   const handleCart =()=>{
     setCart(!cart);
   }
+  
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
