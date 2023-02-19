@@ -27,22 +27,30 @@ uid = "tQN2z9H3xaMdWmeOQYx9"; //remove this later
 
 //get admin user
 
-const getData = async () => {
+const getAdminUserData = async () => {
   const docRef = doc(db, "adminUser", uid);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log("doc data:", docSnap.data());
+    console.log("user doc data:", docSnap.data());
     restaurantId = docSnap.data().restaurantID;
+    getRestaurantData();
     console.log("restaurant id:", restaurantId);
   } else {
     console.log("No such document!");
   }
 };
 
-getData();
+const getRestaurantData = async () => {
+  const docRef = doc(db, "restaurants", restaurantId);
+  const docSnap = await getDoc(docRef);
 
-
+  if (docSnap.exists()) {
+    console.log("restaurant doc data:", docSnap.data());
+  } else {
+    console.log("No such document!");
+  }
+}
 
 export default function RestaurantAdmin() {
   return (
