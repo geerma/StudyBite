@@ -36,7 +36,7 @@ export default function Home() {
         <title>Restudy</title>
         <meta
           name="description"
-          content="Rate restaurnay and study place on campus"
+          content="Find the perfect Study space and grab a Bite to eat!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

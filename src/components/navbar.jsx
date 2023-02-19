@@ -2,13 +2,14 @@ import styles from "@/styles/Navbar.module.css";
 import { useEffect, useState } from "react";
 import Login from "./login";
 import Register from "./register";
-import Image from 'next/image'
-import { BsFillPersonFill,BsFillCartFil } from "react-icons/bs";
-
+import Image from "next/image";
+import { BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
 
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 import { auth } from "../firebase/firebase";
+
+import Burger from "../assets/logo.png";
 
 const Navbar = () => {
   const [login, setLogin] = useState(false);
@@ -24,18 +25,25 @@ const Navbar = () => {
   };
 
   const handleProfile = () => {
-    console.log("Go to Profile"); 
+    console.log("Go to Profile");
     // implement
-  }
+  };
 
   const handleLogout = () => {
     console.log("Logging out");
-    signOut(auth).then(() => {
+    signOut(auth)
+      .then(() => {
         console.log("Sign out Sucessful");
         location.reload();
-      }).catch((error) => {
+      })
+      .catch((error) => {
         // An error happened.
       });
+  };
+
+  const handleLogo = () => {
+    console.log("Logo");
+    // Go to index
   }
 
   useEffect(() => {
@@ -50,27 +58,35 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
-        <Image 
-        src="/src/assets/logo.png"
-        alt="restudy logo"
-        width={100}
-        height={100}
-      />
+        <Image
+          src={Burger}
+          alt="Logo"
+          width={100}
+          height={100}
+          onClick={handleLogo}
+        />
       </div>
       <div className={styles.auth_buttons}>
-        {signedIn==false ? (
+        {signedIn == false ? (
           <div>
-            <button onClick={toggleLogin} className={styles.btnPrimary}>Login</button>
-            <button onClick={toggleRegister} className={styles.btnSecondary}>Register</button>
+            <button onClick={toggleLogin} className={styles.btnPrimary}>
+              Login
+            </button>
+            <button onClick={toggleRegister} className={styles.btnSecondary}>
+              Register
+            </button>
           </div>
-        ) :
-         <div>
-             <button onClick={handleProfile}><BsFillPersonFill/></button>
-             <button><BsFillCartFil/></button>
-             <button onClick={handleLogout}>Logout</button>
-            </div>
-             
-             }
+        ) : (
+          <div className={styles.loggedin_buttons}>
+            <button onClick={handleProfile}>
+              <BsFillPersonFill />
+            </button>
+            <button>
+              <BsFillCartFill />
+            </button>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        )}
       </div>
       {login && <Login handleClose={toggleLogin} />}
       {register && <Register handleClose={toggleRegister} />}

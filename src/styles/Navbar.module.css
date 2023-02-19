@@ -13,6 +13,7 @@
 .auth_buttons > div{
     display: flex;
 }
+
 .btnPrimary{
     background-color: var(--primary);
     color: #fff;
@@ -20,5 +21,10 @@
 .btnSecondary{
     background-color: var(--secondary);
     color: #fff;
+}
+
+.loggedin_buttons > button {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
