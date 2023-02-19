@@ -12,9 +12,14 @@
 }
 .auth_buttons > div > button {
     margin: .5rem;
+    cursor: pointer;
 }
 .auth_buttons > div{
     display: flex;
+}
+
+.logo img {
+    cursor: pointer;
 }
 
 .btnPrimary{
@@ -29,5 +34,6 @@
 .loggedin_buttons > button {
     padding-left: 20px;
     padding-right: 20px;
+    cursor: pointer;
 }
 

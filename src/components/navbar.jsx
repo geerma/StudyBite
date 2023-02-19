@@ -11,11 +11,14 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
 import Burger from "../assets/logo.png";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
+
+  const router = useRouter();
 
   const toggleLogin = () => {
     setLogin(!login);
@@ -26,8 +29,8 @@ const Navbar = () => {
   };
 
   const handleProfile = () => {
-    console.log("Go to Profile");
-    // implement
+    // Go to profile
+    router.push('/user-profile');
   };
 
   const handleLogout = () => {
@@ -43,8 +46,13 @@ const Navbar = () => {
   };
 
   const handleLogo = () => {
-    console.log("Logo");
     // Go to index
+    router.push('/');
+  }
+
+  const handleCart = () => {
+    // Go to index
+    console.log("Go to Cart");
   }
 
   useEffect(() => {
@@ -82,7 +90,7 @@ const Navbar = () => {
             <button onClick={handleProfile}>
               <BsFillPersonFill />
             </button>
-            <button>
+            <button onClick={handleCart}>
               <BsFillCartFill />
             </button>
             <button onClick={handleLogout}>Logout</button>
