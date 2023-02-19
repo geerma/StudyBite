@@ -16,11 +16,16 @@ const inter = Inter({ subsets: ['latin'] })
 export default function userProfile() {
     
     const [userData, setUserData] = useState({});
+    const [updateData, setUpdateData] = useState({});
 
     useEffect(() => {
         getUserData();
     }, []);
     
+    const onClick = () => {
+        setUpdateData({});
+    }
+
     const uid = '8PBspZtOC8jdQtaLw9P9';
     
     const getUserData = async () => {

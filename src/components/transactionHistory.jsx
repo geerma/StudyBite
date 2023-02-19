@@ -15,6 +15,10 @@ const TransactionHistory = ({ userData }) => {
         }
     }
 
+    const buttonClick = () => {
+        console.log("button click");
+    }
+
   return (
         <div className={styles.dropdown_item}>
             <div onClick={handleClick}>Order History</div>
