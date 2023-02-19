@@ -24,7 +24,7 @@
 
 .welcomeicons > img:nth-child(1) {
     border-radius: 50%;
-    background-color: rgb(245, 194, 66);
+    background-color: rgb(75, 165, 147);
     margin-left: 1rem;
     margin-right: 1rem;
     cursor: pointer;
@@ -32,7 +32,7 @@
 
 .welcomeicons > img:nth-child(2) {
     border-radius: 50%;
-    background-color: rgb(75, 165, 147);
+    background-color: rgb(245, 194, 66);
     margin-left: 1rem;
     margin-right: 1rem;
     cursor: pointer;
