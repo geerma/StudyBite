@@ -60,8 +60,8 @@ const Footer = () => {
       <div className={styles.auth_buttons}>
         {signedIn==false ? (
           <div>
-            <button onClick={toggleLogin}>Login</button>
-            <button onClick={toggleRegister}>Register</button>
+            <button onClick={toggleLogin} className={styles.btnPrimary}>Login</button>
+            <button onClick={toggleRegister} className={styles.btnSecondary}>Register</button>
           </div>
         ) :
          <div>
