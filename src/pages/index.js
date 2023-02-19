@@ -28,8 +28,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <button onClick={handleClick} id="1">Test click 1</button>
-      <button onClick={handleClick} id="2">Test click 2</button>
+      {/* <button onClick={handleClick} id="1">Test click 1</button>
+      <button onClick={handleClick} id="2">Test click 2</button> */}
         {/* <Map /> */}
         <MapAsset />
         {clickBool?

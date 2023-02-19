@@ -51,6 +51,7 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   position:absolute;
+  top: 0;
 }
 /* main content in the page */
 .content{
@@ -172,7 +173,10 @@
   transform: scale(1.1);
   transform-origin: 50% 50%;
 }
-
+.mapContainer{
+  width: 100vw;
+  height: 100vh;
+}
 /* Conic Gradient Animation */
 .thirteen::before {
   animation: 6s rotate linear infinite;
