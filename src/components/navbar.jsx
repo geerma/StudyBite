@@ -10,7 +10,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 
 import { auth } from "../firebase/firebase";
 
-const Footer = () => {
+const Navbar = () => {
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
@@ -78,4 +78,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Navbar;

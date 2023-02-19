@@ -37,15 +37,15 @@ const Login = (props) => {
         >
           X
         </span>
-        Login
+        <h1>Login</h1>
         <div className={styles.inputs}>
+          <label>Email</label>
           <input
-            placeholder="Email"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <label>Password</label>
           <input
-            placeholder="Password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
