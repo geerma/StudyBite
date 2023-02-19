@@ -50,11 +50,11 @@ export default function Restaurant() {
 
         {console.log("return data",result)}
         
-        <div>
+        <div className={styles.content}>
           <h2 className={styles.description}>
             {result.name}
           </h2>
-          <p>{result.waiting} mins</p>
+          <p className={styles.wating}>{result.waiting} mins</p>
           <ul>
             {result.menu}
           </ul>

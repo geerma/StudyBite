@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Head from 'next/head'
 import Image from 'next/image'
+// import Image from 'next/image'
+
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -32,9 +34,11 @@ function Map(props) {
         
          
     return (
-      <div id="map" className={styles.map}>
+      <div  className={styles.map}>
         <h2 className={styles.description}>This is a map placeholder</h2>
-        
+        <div id="map">
+            
+        </div>
       </div>
     );
   }

@@ -5,7 +5,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Map from '../components/map'
 import RestaurantCard from '../components/RestaurantCard'
-
+import MapAsset from "../components/MapAsset"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,10 +30,10 @@ export default function Home() {
       <main className={styles.main}>
       <button onClick={handleClick} id="1">Test click 1</button>
       <button onClick={handleClick} id="2">Test click 2</button>
-        <Map />
+        {/* <Map /> */}
+        <MapAsset />
         {clickBool?
         <div className={styles.darkBg} onClick={handleClick}>
-
           <RestaurantCard name={"test name"} restId={restId} rating={3} hours={"temp hours"} description={"Hello World"}/>
         </div>
         :""
