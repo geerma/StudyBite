@@ -17,6 +17,7 @@ export default function Restaurant() {
   const [renderBool, setRender] = useState(true);
   const [result, setResult] = useState([]);
   const [order, setOrder] = useState({});
+  const [click, setClick] = useState("");
   const router = useRouter()
   const { restId } = router.query
   // let menu = [];
@@ -59,23 +60,26 @@ export default function Restaurant() {
 
     }
     
-},[result,order])
+},[result])
+
+
   const plusItem =(event,name)=>{
     let targetId = event.target.id;
-    console.log("+click",targetId);
-    
-    let item = name;
-    if(order && order[item]){
-      let num = order[item];
-      console.log("exist and add new",num);
-      order[item]=num+1;
+    // console.log("+click",targetId);
+
+      let item = name;
+      if(order && order[item]){
+        let num = order[item];
+        console.log("exist and add new",num);
+        order[item]=num+1;
+        
+      }else{
+        order[item]=1;
+      }
+      setOrder(order);
+      console.log("order=",order)
       
-    }else{
-      order[item]=1;
     }
-    setOrder(order);
-    console.log("order=",order)
-  }
   const minusItem=(event,name)=>{
     let targetId = event.target.id;
     console.log("-click",targetId);
@@ -87,6 +91,7 @@ export default function Restaurant() {
     }
     setOrder(order);
     console.log("order=",order)
+    
   }
   
   return (

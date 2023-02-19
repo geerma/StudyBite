@@ -9,7 +9,7 @@ import { BsFillStarFill } from "react-icons/bs";
 
 
 
-function RestaurantCard({restId,name,menu,hours,waiting,rating,description}) {
+function RestaurantCard({restId,name,hours,waiting,rating,description}) {
     const [result, setResult] = useState([]);
     const [request, setRequest] = useState([]);
     const rates = rating

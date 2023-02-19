@@ -4,15 +4,14 @@
     width: 100%;
     justify-content: space-between;
     background-color: var(--secondaryT);
+    align-items: center;
 }
 .wrap .navbar{
-    
-      position: fixed;
-     
-      justify-content: space-between;
+    position: fixed;
+    justify-content: space-between;
 }
 .auth_buttons > div > button {
-    margin: 1rem;
+    margin: .5rem;
 }
 .auth_buttons > div{
     display: flex;
