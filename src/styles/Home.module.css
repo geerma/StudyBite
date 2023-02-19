@@ -185,8 +185,11 @@
 .mapContainer svg{
   width: 1200px;
 }
+.navbar{
+  background-color: var(--secondary);
+}
 .mapContainer .navbar{
-  
+  background-color: var(--secondaryT);
     position: fixed;
     width: 100%;
 }

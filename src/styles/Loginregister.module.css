@@ -44,11 +44,13 @@
   align-items: center;
 }
 
-.inputs > input {
+/* .inputs > input {
   width: 10rem;
   margin: 5px;
-}
+} */
 
 .inputs > button {
   width: 12rem;
+  background-color: var(--highlight);
+  color: #fff;
 }

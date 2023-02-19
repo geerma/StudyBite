@@ -1,4 +1,5 @@
 import styles from "@/styles/Navbar.module.css";
+import homestyles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import Login from "./login";
 import Register from "./register";
@@ -50,12 +51,14 @@ const Footer = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
+      <a href="/"> 
         <Image 
-        src="/src/assets/logo.png"
+        src="/logo.png"
         alt="restudy logo"
         width={100}
         height={100}
       />
+      </a>
       </div>
       <div className={styles.auth_buttons}>
         {signedIn==false ? (

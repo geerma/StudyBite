@@ -17,12 +17,6 @@ export default function FoodMap() {
   const [restId, setId] = useState("");
   // Show restaurant info popup window
 
-  {/*const handleClick=(event)=>{
-    const targetId = event.target.id;
-    setClick(!clickBool);
-    console.log(`Clicked element id: ${targetId}`);
-    setId(targetId);
-  }*/}
   return (
     <>
       <Head>
@@ -31,6 +25,7 @@ export default function FoodMap() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.wrap}>
       <Navbar />
       <main className={styles.main}>
       {/* <button onClick={handleClick} id="1">Test click 1</button>
@@ -40,12 +35,13 @@ export default function FoodMap() {
         <div className={styles.darkBg} onClick={handleClick}>
             
           {/* <RestaurantCard name={"test name"} restId={restId} rating={3} hours={"5:30pm"} description={"Hello World"} waiting={"18"}/> */}
-      <RestaurantsList />
+      
         </div>
         :""
         }
         
       </main>
+      </div>
     </>
   )
 }

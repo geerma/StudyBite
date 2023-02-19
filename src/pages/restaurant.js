@@ -47,11 +47,6 @@ export default function Restaurant() {
             });
             
           
-            // match.menu.map((elem,index)=>{
-            //     menu.push(genMenu(elem))
-            //   console.log("menu",menu);
-            // })
-          
           
             setRender(false);
           }    
@@ -64,7 +59,7 @@ export default function Restaurant() {
 
     }
     
-},[result])
+},[result,order])
   const plusItem =(event,name)=>{
     let targetId = event.target.id;
     console.log("+click",targetId);
@@ -89,9 +84,6 @@ export default function Restaurant() {
       let num = order[item];
       console.log("exist and minus",num);
       order[item]=num-1;
-      
-    }else{
-      // do nothing
     }
     setOrder(order);
     console.log("order=",order)
@@ -119,7 +111,7 @@ export default function Restaurant() {
           </h2>
           <p className={styles.wating}>{result.waiting} mins</p>
           <ul>
-          {/* {menu} */}
+          
             {result.menu && 
             result.menu.map((elem,index)=>{
              
@@ -130,8 +122,8 @@ export default function Restaurant() {
                   <span>{elem.priceInCents/100}</span>
                   <div className={styles.row}>
                   <button id="minus" className={styles.smallBtn} onClick={(event)=>minusItem(event,elem.item)}>-</button>
-                  <input type="number" value={order[elem.item]}/>
-                  
+                  <input type="number" value={order[elem.item]} />
+                  <span>{order[elem.item]}</span>
                   <button id="plus" className={styles.smallBtn} onClick={(event)=>plusItem(event,elem.item)}>+</button>
                   </div>
                   </div>
