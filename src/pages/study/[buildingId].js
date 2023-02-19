@@ -7,25 +7,35 @@ import { useRouter } from "next/router";
 import { auth, db } from "../../firebase/firebase";
 
 import { doc, getDoc } from "firebase/firestore";
+
 import { useEffect, useState } from "react";
 import StudyReviews from "@/components/studyReviews";
 import Navbar from "@/components/navbar";
+import AddBuildingReview from "@/components/addBuildingReview";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function StudyreviewsPage() {
   const router = useRouter();
-  const { name } = router.query;
+  const { buildingId } = router.query;
 
+  const [buildingName, setBuildingName] = useState();
   const [sectionData, setSectionData] = useState();
-  const [selectSection, setSelectSection] = useState(0);
+  const [selectSection, setSelectSection] = useState(undefined);
+
+  const [addReview, setAddReview] = useState(false);
+
+  const toggleAddReview = () => {
+    setAddReview(!addReview);
+  };
 
   const getData = async () => {
-    const docRef = doc(db, "building", "ZlRdaGwaJHMHGrUU9dJg");
+    const docRef = doc(db, "building", buildingId);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
       console.log("Building data:", docSnap.data());
+      setBuildingName(docSnap.data().name);
       const sectionSnapData = docSnap.data().sections;
       setSectionData(sectionSnapData);
     } else {
@@ -35,8 +45,11 @@ export default function StudyreviewsPage() {
   };
 
   useEffect(() => {
+    if (!buildingId) {
+      return;
+    }
     getData();
-  }, []);
+  }, [buildingId]);
 
   return (
     <>
@@ -48,14 +61,22 @@ export default function StudyreviewsPage() {
       </Head>
       <Navbar />
       <main className={styles.main}>
-        <div>Building: {name}</div>
-        <button onClick={() => setSelectSection(1)}>First Floor</button>
-        <button onClick={() => setSelectSection(2)}>Second Floor</button>
-        {selectSection != 0
+        <h1>Building: {buildingName && buildingName}</h1>
+        {selectSection == undefined && sectionData?.map((section, id) => (
+          <div key={id} className={styles.section_buttons}>
+            <button onClick={() => setSelectSection(id + 1)}>
+              {section.name}
+            </button>
+          </div>
+        ))}
+        {selectSection != undefined && <div className={styles.section_buttons}><button onClick={() => setSelectSection(undefined)}>All Sections</button> </div>}
+        {selectSection != undefined
           ? sectionData[selectSection - 1].reviews.map((review, id) => (
               <StudyReviews review={review} key={id} />
             ))
           : null}
+        {selectSection != undefined && <div className={styles.addreview_button}><button onClick={toggleAddReview}>Add Review</button></div>}
+        {addReview && <AddBuildingReview handleClose={toggleAddReview} />}
       </main>
     </>
   );
