@@ -1,9 +1,10 @@
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  /* padding: 6rem; */
   min-height: 100vh;
 }
 
@@ -45,7 +46,27 @@
   width: var(--max-width);
   max-width: 100%;
 }
-
+.darkBg{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position:absolute;
+  top: 0;
+}
+/* main content in the page */
+.content{
+  width: 100%;
+}
+.content h2{
+  font-size: xx-large;
+  text-align: center;
+}
+.wating{
+  outline: 3px solid #000;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+}
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
@@ -129,7 +150,33 @@
   position: absolute;
   z-index: -1;
 }
-
+/* Maps */
+.map{
+  width: 100%;
+  max-width: 120ch;
+  /* temp height */
+  min-height: 30ch;
+}
+.location{
+  cursor: pointer;
+ transition: all .2s ease-in-out;
+}
+.location{
+  position: absolute;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+}
+.location path{
+  position: relative;
+}
+.location:hover{
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
+}
+.mapContainer{
+  width: 100vw;
+  height: 100vh;
+}
 /* Conic Gradient Animation */
 .thirteen::before {
   animation: 6s rotate linear infinite;
@@ -150,6 +197,8 @@
   );
   background-clip: content-box;
 }
+
+
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {

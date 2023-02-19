@@ -8,6 +8,7 @@ import { getFirestore } from "firebase/firestore"; // firestore
 import { getDatabase } from "firebase/database"; // rtdb
 import { Athiti } from "@next/font/google";
 
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -32,3 +33,4 @@ export const db = getFirestore(app);
 
 // Initialize Realtime Database and get a reference to the service
 export const database = getDatabase(app);
+

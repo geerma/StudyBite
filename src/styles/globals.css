@@ -8,7 +8,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-
+  /* TEMP */
+  --primary: #5e5ee5; 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
     #16abff33 0deg,
@@ -77,6 +78,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  border: solid 1px coral;
 }
 
 html,
