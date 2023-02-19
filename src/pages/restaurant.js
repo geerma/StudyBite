@@ -3,6 +3,7 @@ import { db } from "../firebase/firebase";
 import { collection, doc, setDoc,getDoc,getDocs } from "firebase/firestore";
 import Head from 'next/head'
 import Image from 'next/image'
+import Cart from "../components/cart";
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from "../components/navbar"
@@ -20,15 +21,10 @@ export default function Restaurant() {
   const [renderBool, setRender] = useState(true);
   const [result, setResult] = useState([]);
   const [order, setOrder] = useState({});
-  const [click, setClick] = useState("");
+  const [cart, setCart] = useState(false);
   const router = useRouter()
   const { restId } = router.query
-  // let menu = [];
-  // const genMenu = (obj)=>{
-    
-  //     return <p>{obj.item}</p>;
-       
-  //   }
+  
   console.log("restId=",restId);
   useEffect(()=>{
     const getData = async () => {
@@ -69,22 +65,52 @@ export default function Restaurant() {
     setOpenReview(!openReview);
   }
 
-  const plusItem =(event,name)=>{
+  const plusItem =(event,name,menu)=>{
     let targetId = event.target.id;
     // console.log("+click",targetId);
-
-      let item = name;
+    // let price=0;
+    let item = name;
+    // for(let i in menu){
+    //   if(menu[i]["item"]===item){
+    //     console.log("find",menu[i]["item"])
+    //     price+=menu[i]["priceInCents"]
+    //   }
+    // }
+  
       if(order && order[item]){
         let num = order[item];
+        let price =order["price"];
+        let single = 0;
         console.log("exist and add new",num);
-        order[item]=num+1;
+        // console.log("add item",menu)
+        // order[item]=num+1;
+        // price+=menu[item]["priceInCents"];
         
+        for(let i in menu){
+        if(menu[i]["item"]===item){
+          console.log("find",menu[i]["item"])
+          price+=menu[i]["priceInCents"];
+          }
+        }
+        order[item]=[num+1,single];
+        order["price"]=price;
       }else{
-        order[item]=1;
+        let price=0;
+        let single = 0;
+        for(let i in menu){
+          if(menu[i]["item"]===item){
+            console.log("find",menu[i]["item"])
+            price+=menu[i]["priceInCents"]
+            single=menu[i]["priceInCents"];
+          }
+        }
+        order[item]=[1,single];
+        order["price"]=price;
       }
+      order["menu"]=menu;
       setOrder(order);
       console.log("order=",order)
-      
+      handleOrder();
     }
   const minusItem=(event,name)=>{
     let targetId = event.target.id;
@@ -96,11 +122,20 @@ export default function Restaurant() {
       order[item]=num-1;
     }
     setOrder(order);
+    setCart(true);
     console.log("order=",order)
+    handleOrder();
   }
-  
+  const handleOrder=()=>{
+    for (const property in order) {
+      sessionStorage.setItem(property, order[property]);
+    }
+    // let test = sessionStorage.getItem("item");
+    console.log("session",sessionStorage);
+  }
   return (
     <div>
+    {cart && <Cart/>} 
     {
       result &&  
       <div>
@@ -113,7 +148,7 @@ export default function Restaurant() {
         <Navbar/>
       <main className={styles.main}>
 
-        {console.log("return data",result)}
+        {/* {console.log("return data",result)} */}
         
         <div className={styles.content}>
           <h2 >
@@ -134,7 +169,7 @@ export default function Restaurant() {
                   <button id="minus" className={styles.smallBtn} onClick={(event)=>minusItem(event,elem.item)}>-</button>
                   <input type="number" value={order[elem.item]} />
                   <span>{order[elem.item]}</span>
-                  <button id="plus" className={styles.smallBtn} onClick={(event)=>plusItem(event,elem.item)}>+</button>
+                  <button id="plus" className={styles.smallBtn} onClick={(event)=>plusItem(event,elem.item,result.menu)}>+</button>
                   </div>
                   </div>
                   <p>{elem.itemDescription}</p>
@@ -142,6 +177,7 @@ export default function Restaurant() {
               )
             })}
           </ul>
+          {/* <button className={styles.btn} onClick={handleOrder}>Checkout</button> */}
         </div>
         <button className={styles.drawerBtn} onClick={toggleReview}>Review</button>
         {openReview && <FoodReviewsCard />}
@@ -150,7 +186,6 @@ export default function Restaurant() {
       </div>
       
     }
-      
     </div>
   )
 

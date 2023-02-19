@@ -62,7 +62,7 @@
   font-family: "Asul", sans-serif;
 }
 .wating {
-  outline: 3px solid #000;
+  outline: 3px solid var(--primary);
   text-align: center;
   padding: 1rem;
   margin: 1rem 0;
@@ -232,6 +232,16 @@
   background-color: var(--primary);
   color: #fff;
   border-radius: 50%;
+}
+.btn{
+  display: block;
+  padding: .6rem 4rem;
+  background-color: var(--highlight);
+  border-radius: 2rem;
+  color: #fff;
+  font-family: 'Asul', sans-serif;
+  font-size: x-large;
+  margin: 1rem auto;
 }
 
 /* Enable hover only on non-touch devices */

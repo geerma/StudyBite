@@ -3,6 +3,7 @@ import homestyles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import Login from "./login";
 import Register from "./register";
+import Cart from "./cart";
 import Image from "next/image";
 import { BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
 
@@ -17,6 +18,7 @@ const Navbar = () => {
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
+  const [cart, setCart] = useState(false);
 
   const router = useRouter();
 
@@ -54,7 +56,9 @@ const Navbar = () => {
     // Go to index
     console.log("Go to Cart");
   }
-
+  const handleCart =()=>{
+    setCart(!cart);
+  }
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -87,18 +91,19 @@ const Navbar = () => {
           </div>
         ) : (
           <div className={styles.loggedin_buttons}>
-            <button onClick={handleProfile}>
+            <button onClick={handleProfile} className={styles.btnPrimary}>
               <BsFillPersonFill />
             </button>
             <button onClick={handleCart}>
               <BsFillCartFill />
             </button>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} className={styles.btnSecondary}>Logout</button>
           </div>
         )}
       </div>
       {login && <Login handleClose={toggleLogin} />}
       {register && <Register handleClose={toggleRegister} />}
+      {cart && <Cart/>}
     </div>
   );
 };
