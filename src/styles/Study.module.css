@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.studyreview_box {
+    margin: 1rem;
+}
+
+.studyreview_box > p {
+    margin: 3px;
+}
