@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Restudy</title>
+        <title>StudyBite</title>
         <meta
           name="description"
           content="Find the perfect Study space and grab a Bite to eat!"
