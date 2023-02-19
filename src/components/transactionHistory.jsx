@@ -4,7 +4,7 @@ import styles from "@/styles/Dropdown.module.css";
 const TransactionHistory = ({ userData }) => {
     const transactions = userData.transactionHistory;
     const [display, setDisplay] = useState('none');
-    
+
     const handleClick = () => {
         console.log("clicked");
         console.log(display);
@@ -16,14 +16,15 @@ const TransactionHistory = ({ userData }) => {
     }
 
   return (
-        <div>
-            <div className={styles.dropdown} onClick={handleClick}>Transaction History</div>
+        <div className={styles.dropdown_item}>
+            <div onClick={handleClick}>Order History</div>
             <div style={{display:display}}>
-                {transactions && transactions.map((item, id) => (
+                {transactions && transactions.map((item, id) => ( 
                     <div key={id}>
+                        <br></br>
                         <p>Location: { item.Location}</p>
                         <p>Total: ${ item.finalCostCents / 100}</p>
-                        <p>Time: { item.time}</p>
+                        <p>Time: { item.time }</p>
                     </div>
                 ))}
             </div>
