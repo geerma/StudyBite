@@ -3,9 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import RestaurantCard from '../components/RestaurantCard'
-import MapAsset from "../components/MapAsset"
-import RestaurantsList from '../components/restaurantsList'
+import Cart from '../components/cart'
 import Navbar from "../components/navbar"
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,10 +24,8 @@ export default function FoodMap() {
       </Head>
       <div className={styles.wrap}>
       <Navbar />
-      <main className={styles.main}>
-      {/* <button onClick={handleClick} id="1">Test click 1</button>
-      <button onClick={handleClick} id="2">Test click 2</button> */}
-        <MapAsset />
+      <main className={styles.content}>
+      <h2>Your order is placed!</h2>
        
         
       </main>
