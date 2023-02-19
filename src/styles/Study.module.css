@@ -5,6 +5,7 @@
   padding-top: 7rem;
   min-height: 100vh;
   background-color: rgb(252, 237, 198);
+  color: black;
 }
 
 .section_buttons {
@@ -35,6 +36,7 @@
     flex-direction: row;
     border: 1px solid black;
     background-color: rgb(253, 246, 229);
+    color: black;
 }
 
 .studyratings {
@@ -43,6 +45,7 @@
     display: flex;
     flex-direction: column;
     border-right: 1px solid black;
+    color: black;
 }
 
 .studyratings > span {
@@ -60,6 +63,7 @@
     margin-top: 20px;
     margin-left: 1rem;
     text-align: left;
+    color: black;
 }
 
 .studycomments > p {

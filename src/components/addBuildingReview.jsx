@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "@/styles/Loginregister.module.css";
+import { doc, setDoc, updateDoc } from "firebase/firestore"; 
 
-import { auth } from "../firebase/firebase";
+import { auth, db } from "../firebase/firebase";
 
 import { useRouter } from "next/router";
 
@@ -11,9 +12,32 @@ const AddBuildingReview = (props) => {
   const [seating, setSeating] = useState();
   const [quietness, setQuietness] = useState();
   const [comment, setComment] = useState("");
+  const sectionId = props.buildingId;
+  const section = props.sectionData;
+  let reviews = section.reviews; 
+  console.log(section);
 
+  const updateDatabase = async (review) => {
+    updateDoc(doc(db, "building", sectionId), review);
+  }
+
+  
   const handleSubmitReview = () => {
     console.log(rating, outlets, seating, quietness, comment);
+    const review = {
+      overallRating: rating,
+      outlets: outlets,
+      seating: seating,
+      quietness: quietness,
+      comments: comment,
+    }
+    reviews.push(review);
+
+    const sectionData = {
+      name: section.name,
+      reviews: reviews,
+    }
+    updateDatabase(sectionData);
   }
 
   return (
