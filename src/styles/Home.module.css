@@ -222,6 +222,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.smallBtn{
+  padding: .3rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+}
 
 
 
@@ -250,7 +258,7 @@
 /* Mobile */
 @media (max-width: 700px) {
   .content {
-    padding: 4rem;
+    padding: 2rem;
   }
 
   .grid {

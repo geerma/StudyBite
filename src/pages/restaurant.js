@@ -16,15 +16,15 @@ export default function Restaurant() {
 
   const [renderBool, setRender] = useState(true);
   const [result, setResult] = useState([]);
-  const [menu, setMenu] = useState([]);
+  const [order, setOrder] = useState({});
   const router = useRouter()
   const { restId } = router.query
   // let menu = [];
-  const genMenu = (obj)=>{
+  // const genMenu = (obj)=>{
     
-      return <p>{obj.item}</p>;
+  //     return <p>{obj.item}</p>;
        
-    }
+  //   }
   console.log("restId=",restId);
   useEffect(()=>{
     const getData = async () => {
@@ -47,10 +47,10 @@ export default function Restaurant() {
             });
             
           
-            match.menu.map((elem,index)=>{
-                menu.push(genMenu(elem))
-              console.log("menu",menu);
-            })
+            // match.menu.map((elem,index)=>{
+            //     menu.push(genMenu(elem))
+            //   console.log("menu",menu);
+            // })
           
           
             setRender(false);
@@ -61,23 +61,29 @@ export default function Restaurant() {
     if(result.length===0){
         getData();
     }else{
-      
-      // let menu = [];
-      // const genMenu = ()=>{
-      //   result.menu.map((elem,index)=>{
-      //     let jsx=<div key={index}>
-      //         <p>{elem.item}</p>
-      //       </div>;
-      //       menu.push(jsx)
-      //     console.log("menu",menu);
-      //   })
-      //   genMenu();
-      // }
-      
+
     }
     
 },[result])
-
+  const plusItem =(event,name)=>{
+    let targetId = event.target.id;
+    console.log("+click",targetId);
+    
+    let item = name;
+    if(order && order[item]){
+      let num = order[item];
+      order[item]=num++;
+      
+    }else{
+      order[item]=1;
+    }
+    setOrder(order);
+    console.log("order=",order)
+  }
+  const minusItem=(event,name)=>{
+    console.log("-click");
+    let targetId = event.target.id;
+  }
   
   return (
     <div>
@@ -96,19 +102,25 @@ export default function Restaurant() {
         {console.log("return data",result)}
         
         <div className={styles.content}>
-          <h2 className={styles.description}>
+          <h2 >
             {result.name}
           </h2>
           <p className={styles.wating}>{result.waiting} mins</p>
           <ul>
           {/* {menu} */}
-            {result.menu.map((elem,index)=>{
+            {result.menu && 
+            result.menu.map((elem,index)=>{
+             
               return (
                 <div key={index}>
                   <div className={styles.row}>
                   <p>{elem.item}</p>
                   <span>{elem.priceInCents/100}</span>
-                  <button>+</button>
+                  <div className={styles.row}>
+                  <button id="minus" className={styles.smallBtn} onClick={minusItem}>-</button>
+                  <input type="number" value={order[elem.item]}/>
+                  <button id="plus" className={styles.smallBtn} onClick={(event)=>plusItem(event,elem.item)}>+</button>
+                  </div>
                   </div>
                   <p>{elem.itemDescription}</p>
                 </div>
