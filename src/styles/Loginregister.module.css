@@ -1,0 +1,54 @@
+.loginregister_container {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.loginregister_box {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  height: auto;
+  min-height: 70vh;
+  max-height: 80vh;
+  margin-top: 15vh;
+  background: #fff;
+  padding: 20px 50px;
+  border: 1px solid #999;
+  text-align: center;
+  overflow: auto;
+}
+
+.loginregister_close {
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: 17vh;
+  background: #ededed;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  line-height: 28px;
+  text-align: center;
+  border: 2px solid rgb(188, 180, 180);
+  font-size: 18px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs > input {
+  width: 10rem;
+  margin: 5px;
+}
+
+.inputs > button {
+  width: 12rem;
+}
