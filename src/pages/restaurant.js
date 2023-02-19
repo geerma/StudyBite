@@ -35,8 +35,10 @@ export default function Restaurant() {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
           
-          const match =doc.data();
-          console.log("dami",match)
+          const resp =doc.data();
+          // resp.filter(doc.id===restId)
+          const match = doc.data();
+          console.log("resp",resp)
           
           if(match && renderBool){
             // setResult(damiData);
