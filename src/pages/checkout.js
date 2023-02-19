@@ -17,15 +17,15 @@ export default function FoodMap() {
   return (
     <>
       <Head>
-        <title>Restudy | Checkout</title>
+        <title>Restudy</title>
         <meta name="description" content="Rate restaurnay and study place on campus" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.wrap}>
       <Navbar />
-      <main className={styles.main}>
-      <Cart/>
+      <main className={styles.content}>
+      <h2>Your order is placed!</h2>
        
         
       </main>

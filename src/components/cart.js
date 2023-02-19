@@ -6,12 +6,13 @@ const Cart =()=>{
     console.log("read",readSession)
     let jsxArr=[];
     const genJsx=(key)=>{
-        if(key!="price"){
+        if(key!="price" && key!="menu" && key!="item"){
+            
             return (
                 <li key={key} className={styles.checkoutitem}>
                     <span>{key}</span>
-                    <span>{readSession.getItem(key)}</span>
-                    <span>$ {readSession.getItem(key)}</span>
+                    <span>{readSession.getItem(key)[0]}</span>
+                    {/* <span>$ {readSession.getItem(key)[2]}</span> */}
                 </li>
             )
         }
@@ -31,7 +32,7 @@ const Cart =()=>{
                     {jsxArr}
 
                 </ul>
-
+            <a href="/checkout" className={styles.btn}>Pay</a>
             </div>
         
     )
