@@ -34,22 +34,22 @@ export default function Restaurant() {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
           
-          const match =doc.data();
-          console.log("dami",match)
-          
-          if(match && renderBool){
-            // setResult(damiData);
-            setResult({
-              "name":match.name,
-              "waiting":"15",
-              "menu":match.menu,
-              "reviews":match.reviews
-            });
+          if(doc.id===restId){
+            const match =doc.data();
+            console.log("match",match)
             
-          
-          
-            setRender(false);
-          }    
+            if(match && renderBool){
+              // setResult(damiData);
+              setResult({
+                "name":match.name,
+                "waiting":"15",
+                "menu":match.menu,
+                "reviews":match.reviews
+              });
+              
+              setRender(false);
+            }    
+          }
         // setResult(arr);
         });
     };
