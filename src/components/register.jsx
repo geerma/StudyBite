@@ -9,7 +9,8 @@ import { collection, addDoc } from "firebase/firestore";
 import Link from "next/link";
 
 const Register = (props) => {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,7 +18,8 @@ const Register = (props) => {
     try {
       const docRef = await addDoc(collection(db, "users"), {
         uuid: user.uid,
-        name: name,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
       });
       console.log("Document written with ID: ", docRef.id);
