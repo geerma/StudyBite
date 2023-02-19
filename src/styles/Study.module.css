@@ -8,8 +8,26 @@
 
 .studyreview_box {
     margin: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
 }
 
-.studyreview_box > p {
+.studyratings {
+    width: 25%;
+}
+
+.studyratings > p {
     margin: 3px;
+}
+
+.studycomments {
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.studycomments > p {
+    margin: 3px;
+    text-align: left;
+    overflow-wrap: break-word;
 }
