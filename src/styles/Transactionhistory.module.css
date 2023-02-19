@@ -1,0 +1,99 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem;
+    min-height: 100vh;
+    background-color: rgb(252, 237, 198);
+  }
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.yourAccountMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.yourAccountHeader {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#63A394; 
+}
+
+.order {
+    margin-bottom: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(252, 237, 198);
+    color: #150215; 
+    height: 300px;
+
+}
+
+.preparing{
+    margin-bottom: 1rem;
+    color:#FF5D5D; 
+}
+
+.dropdown_item{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:#63A394; 
+}
+
+.dropdown_form{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:#63A394;
+    text-align: center;
+}
+
+.button{
+    width:150px;
+    background-color:#FF5D5D; 
+}
+
+.line{
+    background-color: #63A394;
+    width: 300px;
+    height: 3px;
+}
+
+.dropdowns{
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.topLeft{
+    float:left;
+    width: 100%;
+}
+
+.topRight{
+    float:right;
+}

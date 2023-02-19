@@ -54,18 +54,25 @@ const Register = (props) => {
         >
           X
         </span>
-        Register
+        <h1>Register</h1>
         <div className={styles.inputs}>
+          <label>First Name</label>
           <input
-            placeholder="Full Name"
             type="text"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setFirstName(e.target.value)}
           />
+          <label>Last Name</label>
+          <input
+            type="text"
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <label>Email</label>
           <input
             placeholder="Email"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <label>Password</label>
           <input
             placeholder="Password"
             type="password"

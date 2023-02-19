@@ -26,7 +26,7 @@
 .loginregister_close {
   cursor: pointer;
   position: fixed;
-  right: calc(15% - 30px);
+  right: calc(15% - 40px);
   top: 17vh;
   background: #ededed;
   width: 30px;
@@ -38,19 +38,46 @@
   font-size: 18px;
 }
 
+.loginregister_box > h1 {
+  color: rgb(75, 165, 147);
+}
+
 .inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: left;
+  margin-top: 2rem;
+  color: rgb(75, 165, 147);
 }
 
-/* .inputs > input {
-  width: 10rem;
-  margin: 5px;
-} */
+.inputs > label {
+  font-size: 24px;
+}
+
+
+.inputs > input {
+  width: 20rem;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(75, 165, 147);
+  padding: 8px;
+}
 
 .inputs > button {
   width: 12rem;
-  background-color: var(--highlight);
-  color: #fff;
+  background-color: rgb(235, 86, 96);
+  color: white;
+  border: 0px;
+  font-size: 20px;
+  width: 150px;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 760px) {
+  .loginregister_box {
+    width: 100%;
+  }
+
 }

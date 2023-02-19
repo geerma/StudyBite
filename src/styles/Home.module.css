@@ -1,4 +1,3 @@
-
 .main {
   display: flex;
   flex-direction: column;
@@ -46,23 +45,23 @@
   width: var(--max-width);
   max-width: 100%;
 }
-.darkBg{
+.darkBg {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-  position:absolute;
+  position: absolute;
   top: 0;
 }
 /* main content in the page */
-.content{
+.content {
   width: 100%;
 }
-.content h2{
+.content h2 {
   font-size: xx-large;
   text-align: center;
-  font-family: 'Asul', sans-serif;
+  font-family: "Asul", sans-serif;
 }
-.wating{
+.wating {
   outline: 3px solid #000;
   text-align: center;
   padding: 1rem;
@@ -119,7 +118,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -147,42 +146,42 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
 /* Maps */
-.mapSize{
+.mapSize {
   width: 100%;
 }
-.map{
+.map {
   width: 100%;
   max-width: 120ch;
 
   min-height: 100vh;
 }
-.location{
+.location {
   cursor: pointer;
- transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.location{
+.location {
   position: absolute;
   transform: scale(1);
   transform-origin: 50% 50%;
 }
-.location path{
+.location path {
   position: relative;
 }
-.location:hover{
+.location:hover {
   transform: scale(1.1);
   transform-origin: 50% 50%;
 }
-.mapContainer{
+.mapContainer {
   width: 100vw;
   height: 100vh;
   overflow: scroll;
 }
-.mapContainer svg{
+.mapContainer svg {
   width: 1200px;
 }
 .navbar{
@@ -233,8 +232,6 @@
   color: #fff;
   border-radius: 50%;
 }
-
-
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
