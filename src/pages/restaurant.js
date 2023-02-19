@@ -8,12 +8,15 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from "../components/navbar"
 import { useRouter } from 'next/router'
+import FoodReviewsCard from "@/components/FoodReviewsCard";
 
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Restaurant() {
+
+  const [openReview, setOpenReview] = useState(false);
 
   const [renderBool, setRender] = useState(true);
   const [result, setResult] = useState([]);
@@ -58,6 +61,9 @@ export default function Restaurant() {
     
 },[result])
 
+  const toggleReview =  () => {
+    setOpenReview(!openReview);
+  }
 
   const plusItem =(event,name,menu)=>{
     let targetId = event.target.id;
@@ -173,8 +179,8 @@ export default function Restaurant() {
           </ul>
           {/* <button className={styles.btn} onClick={handleOrder}>Checkout</button> */}
         </div>
-        <button className={styles.drawerBtn}>Review</button>
-     
+        <button className={styles.drawerBtn} onClick={toggleReview}>Review</button>
+        {openReview && <FoodReviewsCard />}
       </main>
       
       </div>

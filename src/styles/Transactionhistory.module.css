@@ -1,7 +1,7 @@
 .main {
     display: flex;
     flex-direction: column;
-    padding: 6rem;
+    padding: 2rem;
     min-height: 100vh;
     background-color: rgb(252, 237, 198);
   }
@@ -61,7 +61,7 @@
     color:#63A394; 
 }
 
-.dropdown_form{
+.dropdown_form {
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;
@@ -86,7 +86,7 @@
 .dropdowns{
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 250px;
 }
 
 .topLeft{

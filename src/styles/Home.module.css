@@ -218,6 +218,7 @@
   background-color: var(--neutral);
   border-radius: unset;
   color: var(--primary);
+  z-index: 2
 }
 .row{
   display: flex;
