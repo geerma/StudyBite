@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 
 
 
-function Map(props) {
+function Footer(props) {
 
     return (
       <footer id="mainFooter">
@@ -15,4 +15,4 @@ function Map(props) {
     );
   }
   
-  export default Map;
+  export default Footer;

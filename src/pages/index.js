@@ -11,9 +11,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [clickBool, setClick] = useState(false);
+  const [restId, setId] = useState("");
   // Show restaurant info popup window
-  const handleClick=()=>{
+  const handleClick=(event)=>{
+    const targetId = event.target.id;
     setClick(!clickBool);
+    console.log(`Clicked element id: ${targetId}`);
+    setId(targetId);
   }
   return (
     <>
@@ -24,10 +28,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <button onClick={handleClick}>Test click</button>
+      <button onClick={handleClick} id="1">Test click 1</button>
+      <button onClick={handleClick} id="2">Test click 2</button>
         <Map />
         {clickBool?
-        <RestaurantCard name={"test name"} restId={"abc123"} rating={3} hours={"temp hours"} description={"Hello World"}/>
+        <div className={styles.darkBg} onClick={handleClick}>
+
+          <RestaurantCard name={"test name"} restId={restId} rating={3} hours={"temp hours"} description={"Hello World"}/>
+        </div>
         :""
         }
       </main>

@@ -12,16 +12,16 @@ function RestaurantCard({restId,name,menu,hours,waiting,rating,description}) {
     const [request, setRequest] = useState([]);
     const rates = rating
         let starsArr=[];
-        const star = ()=>{
-            return(<i className={styles.star}></i>)
+        const star = (num)=>{
+            return(<i className={styles.star} key={num}></i>)
         }
         for(let i = 0; i<rates;i++){
-            starsArr.push(star())
+            starsArr.push(star(i))
         }
          
     return (
-        // blur/coveredup background
-    <div className={styles.darkBg}>
+        
+    <div>
         {/* // Restaurant info card */}
       <div id={restId} className={styles.card}>
         <h3 className={styles.cardh2}>{name}</h3>
@@ -34,11 +34,9 @@ function RestaurantCard({restId,name,menu,hours,waiting,rating,description}) {
             <p>{hours}</p>
         </div>
         <div id="rating">
-            {starsArr.map((elem,index)=>{
-                return elem;
-            })}
+            {starsArr} 
         </div>
-        <a href="#" className={styles.btn}>Go</a>
+        <a href={`/restaurant?restId=${restId}`} className={styles.btn}>Go</a>
       </div>
       <button id="leftBtn" className={styles.navBtn}>{String.fromCharCode(60)}</button>
       <button id="rightBtn" className={styles.navBtn}>{String.fromCharCode(62)}</button>

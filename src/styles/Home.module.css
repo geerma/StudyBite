@@ -46,7 +46,12 @@
   width: var(--max-width);
   max-width: 100%;
 }
-
+.darkBg{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position:absolute;
+}
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
