@@ -76,7 +76,7 @@ export default function StudyreviewsPage() {
             ))
           : null}
         {selectSection != undefined && <div className={styles.addreview_button}><button onClick={toggleAddReview}>Add Review</button></div>}
-        {addReview && <AddBuildingReview handleClose={toggleAddReview} />}
+        {addReview && <AddBuildingReview sectionData={sectionData[selectSection - 1]} buildingId={buildingId} handleClose={toggleAddReview} />}
       </main>
     </>
   );
