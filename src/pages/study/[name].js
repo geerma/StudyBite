@@ -9,6 +9,7 @@ import { auth, db } from "../../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import StudyReviews from "@/components/studyReviews";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +46,7 @@ export default function StudyreviewsPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <main className={styles.main}>
         <div>Building: {name}</div>
         <button onClick={() => setSelectSection(1)}>First Floor</button>

@@ -1,0 +1,58 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background-color: rgb(252, 237, 198);
+}
+
+.titlelogo {
+    position: absolute;
+}
+
+.staricon {
+    position: absolute;
+    margin-left: 15rem;
+    top: 17%;
+}
+
+.welcomeicons {
+    display: flex;
+    flex-direction: row;
+}
+
+.welcomeicons > img:nth-child(1) {
+    border-radius: 50%;
+    background-color: rgb(245, 194, 66);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.welcomeicons > img:nth-child(2) {
+    border-radius: 50%;
+    background-color: rgb(75, 165, 147);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.welcomeicons > h2 {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    width: 4rem;
+}
+
+.welcomebuttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.welcomebuttons > button {
+    background-color: rgb(235, 86, 96);
+    color: white;
+    border: 0px;
+    font-size: 20px;
+    width: 150px;
+    margin-bottom: 1rem;
+}
