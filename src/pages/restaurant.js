@@ -72,7 +72,8 @@ export default function Restaurant() {
     let item = name;
     if(order && order[item]){
       let num = order[item];
-      order[item]=num++;
+      console.log("exist and add new",num);
+      order[item]=num+1;
       
     }else{
       order[item]=1;
@@ -81,8 +82,19 @@ export default function Restaurant() {
     console.log("order=",order)
   }
   const minusItem=(event,name)=>{
-    console.log("-click");
     let targetId = event.target.id;
+    console.log("-click",targetId);
+    let item = name;
+    if(order && order[item]){
+      let num = order[item];
+      console.log("exist and minus",num);
+      order[item]=num-1;
+      
+    }else{
+      // do nothing
+    }
+    setOrder(order);
+    console.log("order=",order)
   }
   
   return (
@@ -117,8 +129,9 @@ export default function Restaurant() {
                   <p>{elem.item}</p>
                   <span>{elem.priceInCents/100}</span>
                   <div className={styles.row}>
-                  <button id="minus" className={styles.smallBtn} onClick={minusItem}>-</button>
+                  <button id="minus" className={styles.smallBtn} onClick={(event)=>minusItem(event,elem.item)}>-</button>
                   <input type="number" value={order[elem.item]}/>
+                  
                   <button id="plus" className={styles.smallBtn} onClick={(event)=>plusItem(event,elem.item)}>+</button>
                   </div>
                   </div>
