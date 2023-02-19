@@ -1,10 +1,8 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     background-color: var(--secondaryT);
-    position: fixed;
-    width: 100%;
+    justify-content: space-between;
 }
 
 .auth_buttons > div > button {

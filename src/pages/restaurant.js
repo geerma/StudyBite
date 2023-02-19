@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import { db } from "../firebase/firebase";
+import { collection, doc, setDoc,getDoc,getDocs } from "firebase/firestore";
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
@@ -15,32 +16,73 @@ export default function Restaurant() {
 
   const [renderBool, setRender] = useState(true);
   const [result, setResult] = useState([]);
+  const [menu, setMenu] = useState([]);
   const router = useRouter()
   const { restId } = router.query
-  
-  console.log("restId=",restId);
-
-  const damiData =[
-    {"id":"1","name":"Bad Earth","waiting":30,"menu":"probably need array"},
-    {"id":"2","name":"Topway","waiting":5,"menu":"Topway menu probably need array"}
-  ]
-
-    const getData=()=>{
-      // get restaruant info
-      const match = damiData.filter(obj => {
-        return obj.id === restId
-      })
-      if(match.length>0 && renderBool){
-        setResult(match[0]);
-        setRender(false);
-      }    
+  // let menu = [];
+  const genMenu = (obj)=>{
+    
+      return <p>{obj.item}</p>;
+       
     }
-    getData();
-  console.log("call restaurant",result);
+  console.log("restId=",restId);
+  useEffect(()=>{
+    const getData = async () => {
+        // let arr=[];
+        const querySnapshot = await getDocs(collection(db, "restaurants"));
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+          
+          const match =doc.data();
+          console.log("dami",match)
+          
+          if(match && renderBool){
+            // setResult(damiData);
+            setResult({
+              "name":match.name,
+              "waiting":"15",
+              "menu":match.menu,
+              "reviews":match.reviews
+            });
+            
+          
+            match.menu.map((elem,index)=>{
+                menu.push(genMenu(elem))
+              console.log("menu",menu);
+            })
+          
+          
+            setRender(false);
+          }    
+        // setResult(arr);
+        });
+    };
+    if(result.length===0){
+        getData();
+    }else{
+      
+      // let menu = [];
+      // const genMenu = ()=>{
+      //   result.menu.map((elem,index)=>{
+      //     let jsx=<div key={index}>
+      //         <p>{elem.item}</p>
+      //       </div>;
+      //       menu.push(jsx)
+      //     console.log("menu",menu);
+      //   })
+      //   genMenu();
+      // }
+      
+    }
+    
+},[result])
+
+  
   return (
     <div>
     {
-      result && 
+      result &&  
       <div>
         <Head>
           <title>Restudy | Restaurant</title>
@@ -48,7 +90,7 @@ export default function Restaurant() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-      
+        <Navbar/>
       <main className={styles.main}>
 
         {console.log("return data",result)}
@@ -59,13 +101,26 @@ export default function Restaurant() {
           </h2>
           <p className={styles.wating}>{result.waiting} mins</p>
           <ul>
-            {result.menu}
+          {/* {menu} */}
+            {result.menu.map((elem,index)=>{
+              return (
+                <div key={index}>
+                  <div className={styles.row}>
+                  <p>{elem.item}</p>
+                  <span>{elem.priceInCents/100}</span>
+                  <button>+</button>
+                  </div>
+                  <p>{elem.itemDescription}</p>
+                </div>
+              )
+            })}
           </ul>
         </div>
-       
+        <button className={styles.drawerBtn}>Review</button>
       </main>
       
       </div>
+      
     }
       
     </div>

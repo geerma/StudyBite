@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-
+// import { db } from "../firebase/firebase";
+// import { collection, doc, setDoc } from "firebase/firestore"; 
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Modal.module.css'
+import { BsFillStarFill } from "react-icons/bs";
 
 
 
@@ -13,7 +15,7 @@ function RestaurantCard({restId,name,menu,hours,waiting,rating,description}) {
     const rates = rating
         let starsArr=[];
         const star = (num)=>{
-            return(<i className={styles.star} key={num}></i>)
+            return(<BsFillStarFill key={num}/>)
         }
         for(let i = 0; i<rates;i++){
             starsArr.push(star(i))
@@ -26,7 +28,7 @@ function RestaurantCard({restId,name,menu,hours,waiting,rating,description}) {
       <div id={restId} className={styles.card}>
         <h3 className={styles.cardh2}>{name}</h3>
         <h4 className={styles.wating}>{waiting} Mins</h4>
-        <div id="rating">
+        <div id="rating" className={styles.row}>
             {starsArr} 
         </div>
         <div id="info">

@@ -6,12 +6,14 @@ import styles from '@/styles/Home.module.css'
 import Map from '../components/map'
 import RestaurantCard from '../components/RestaurantCard'
 import MapAsset from "../components/MapAsset"
+import RestaurantsList from '../components/restaurantsList'
 import Navbar from "../components/navbar"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function FoodMap() {
   const [clickBool, setClick] = useState(false);
+  const [listBool, setList] = useState(false);
   const [restId, setId] = useState("");
   // Show restaurant info popup window
 
@@ -33,14 +35,16 @@ export default function FoodMap() {
       <main className={styles.main}>
       {/* <button onClick={handleClick} id="1">Test click 1</button>
       <button onClick={handleClick} id="2">Test click 2</button> */}
-        
         <MapAsset />
         {clickBool?
         <div className={styles.darkBg} onClick={handleClick}>
-          <RestaurantCard name={"test name"} restId={restId} rating={3} hours={"5:30pm"} description={"Hello World"} waiting={"18"}/>
+            
+          {/* <RestaurantCard name={"test name"} restId={restId} rating={3} hours={"5:30pm"} description={"Hello World"} waiting={"18"}/> */}
+      <RestaurantsList />
         </div>
         :""
         }
+        
       </main>
     </>
   )

@@ -185,6 +185,11 @@
 .mapContainer svg{
   width: 1200px;
 }
+.mapContainer .navbar{
+  
+    position: fixed;
+    width: 100%;
+}
 /* Conic Gradient Animation */
 .thirteen::before {
   animation: 6s rotate linear infinite;
@@ -204,6 +209,18 @@
     rgba(var(--tile-end-rgb), 1)
   );
   background-clip: content-box;
+}
+.drawerBtn{
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--neutral);
+  border-radius: unset;
+  color: var(--primary);
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
