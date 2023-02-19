@@ -1,21 +1,19 @@
-import styles from "@/styles/Study.module.css";
-import transactionItem from "./transactionItem";
+const TransactionHistory = ({ userData }) => {
+    const transactions = userData.transactionHistory;
 
-const transactionHistory = ({ transactions }) => {
-    console.log(transactions);
-    const transactionItems = transactions.map((item) =>
-    <div>
-        <li>Location: {item.location}</li>
-        <li>Total: {item.finalPriceCents / 100}</li>
-        <li>Time: {item.time}</li>
-    </div>
-    );
-    console.log("hello??");
   return (
     <div>
-        {transactionItems}
+        {
+            transactions && transactions.map((item, id) => (
+                <div key={id}>
+                    <p>Location: { item.Location}</p>
+                    <p>Total: ${ item.finalCostCents / 100}</p>
+                    <p>Time: { item.time}</p>
+                </div>
+            ))
+        }
     </div>
   );
 };
 
-export default transactionHistory;
+export default TransactionHistory;

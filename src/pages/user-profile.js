@@ -6,7 +6,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '@/firebase/firebase';
 import React, { useEffect, useRef, useState } from "react";
-import transactionHistory from '@/components/transactionHistory';
+import TransactionHistory from '@/components/transactionHistory';
 
 const inter = Inter({ subsets: ['latin'] })
 // onAuthStateChanged(auth, (user) => {
@@ -80,13 +80,12 @@ export default function userProfile() {
 
         <div className={styles.center}>
             <h2 className={inter.className}>
-               Hello: {userData.firstName} {userData.lastName}
+               Hello, {userData.firstName} {userData.lastName}
             </h2>
         </div>
 
         <div className={styles.center}>
-            <transactionHistory transactions={userData.transactionHistory}/>
-            hello
+            <TransactionHistory userData={userData}/>
         </div>
 
         {/* <div className={styles.grid}>
