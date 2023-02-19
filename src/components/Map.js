@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+
 import Head from 'next/head'
 import Image from 'next/image'
 // import Image from 'next/image'
