@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
@@ -25,17 +25,18 @@ function RestaurantCard({restId,name,menu,hours,waiting,rating,description}) {
         {/* // Restaurant info card */}
       <div id={restId} className={styles.card}>
         <h3 className={styles.cardh2}>{name}</h3>
-        <div id="info">
-            <h4>Info</h4>
-            <p>{description}</p>
-        </div>
-        <div id="hours">
-            <h4>Hours</h4>
-            <p>{hours}</p>
-        </div>
+        <h4 className={styles.wating}>{waiting} Mins</h4>
         <div id="rating">
             {starsArr} 
         </div>
+        <div id="info">
+            <p>{description}</p>
+        </div>
+        <p id="hours">
+            <span id="openStatus" className={styles.openStatus}>Open</span>
+            <span>{hours} closed</span>
+        </p>
+        
         <a href={`/restaurant?restId=${restId}`} className={styles.btn}>Go</a>
       </div>
       <button id="leftBtn" className={styles.navBtn}>{String.fromCharCode(60)}</button>

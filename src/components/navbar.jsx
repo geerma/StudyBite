@@ -2,6 +2,9 @@ import styles from "@/styles/Navbar.module.css";
 import { useEffect, useState } from "react";
 import Login from "./login";
 import Register from "./register";
+import Image from 'next/image'
+import { BsFillPersonFill,BsFillCartFil } from "react-icons/bs";
+
 
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -47,17 +50,23 @@ const Footer = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
-        <h1>Navbar</h1>
+        <Image 
+        src="/src/assets/logo.png"
+        alt="restudy logo"
+        width={100}
+        height={100}
+      />
       </div>
       <div className={styles.auth_buttons}>
         {signedIn==false ? (
           <div>
-            <button onClick={toggleLogin}>Login</button>
-            <button onClick={toggleRegister}>Register</button>
+            <button onClick={toggleLogin} className={styles.btnPrimary}>Login</button>
+            <button onClick={toggleRegister} className={styles.btnSecondary}>Register</button>
           </div>
         ) :
          <div>
-             <button onClick={handleProfile}>Profile</button>
+             <button onClick={handleProfile}><BsFillPersonFill/></button>
+             <button><BsFillCartFil/></button>
              <button onClick={handleLogout}>Logout</button>
             </div>
              
