@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Head>
         <title>Restudy</title>
-        <meta name="description" content="Rate restaurnay and study place on campus" /
+        <meta name="description" content="Rate restaurnay and study place on campus" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
