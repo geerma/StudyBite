@@ -6,6 +6,12 @@ By: Geer Ma, Joshua Lee, Mackenzie Hisako Dalton, Tîng-huē Tân, Lumi Lu
 
 ---
 
+## Links
+
+[Website/Demo](main.d2ebrq8tl7lmhq.amplifyapp.com/)
+
+[Devpost](https://devpost.com/software/studybite?ref_content=my-projects-tab&ref_feature=my_projects)
+
 ## Inspiration
 We were inspired by the theme: On-campus experience.
 
@@ -39,3 +45,26 @@ For many of us, it was our first time participating in a hackathon and also our 
 - Support for multiple campuses
 - Allowing students to find perfect study spaces by filtering
 - Administrative control features
+
+## Screenshots
+
+<img src="./screenshots/1_landingpage.png" width="300" height="570">
+<img src="./screenshots/1-2_landingpagelogin.png" width="300" height="570">
+<img src="./screenshots/2_studymap.png" width="300" height="570">
+<img src="./screenshots/3_studylocation.png" width="300" height="570">
+<img src="./screenshots/4_studybuilding.png" width="300" height="570">
+<img src="./screenshots/5_buildingreviews.png" width="300" height="570">
+<img src="./screenshots/6_buildingaddreview.png" width="300" height="570">
+<img src="./screenshots/7_foodmap.png" width="300" height="570">
+<img src="./screenshots/8_restaurantlist.png" width="300" height="570">
+<img src="./screenshots/9_restaurantchosen.png" width="300" height="570">
+<img src="./screenshots/10_restaurantmenu.png" width="300" height="570">
+<img src="./screenshots/10-2_restaurantcart.png" width="300" height="570">
+<img src="./screenshots/11_restaurantreviews.png" width="300" height="570">
+<img src="./screenshots/12_profile.png" width="300" height="570">
+
+## Design Mockups
+
+[Study]('./design_mockups/study.pdf')
+
+[Food]('./design_mockups/food.pdf')
