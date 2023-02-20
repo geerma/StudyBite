@@ -8,7 +8,7 @@ By: Geer Ma, Joshua Lee, Mackenzie Hisako Dalton, Tîng-huē Tân, Lumi Lu
 
 ## Links
 
-[Website/Demo](main.d2ebrq8tl7lmhq.amplifyapp.com/)
+[Website/Demo](https://main.d2ebrq8tl7lmhq.amplifyapp.com/)
 
 [Devpost](https://devpost.com/software/studybite?ref_content=my-projects-tab&ref_feature=my_projects)
 
