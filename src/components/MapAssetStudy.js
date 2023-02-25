@@ -11,11 +11,11 @@ function MapAssetStudy() {
     const targetId = event.target.id;
     if (targetId == 2) {
       // If clicked on MacHall
-      window.alert("This is a Food Location!")
+      window.alert("This is a Food Location!");
     } else {
       setClick(!clickBool);
     }
-    console.log(`Clicked element id: ${targetId}`);
+    // console.log(`Clicked element id: ${targetId}`);
     setBuildingId(targetId);
   };
 
@@ -77,9 +77,7 @@ function MapAssetStudy() {
       </svg>
       {clickBool ? (
         <div className={styles.darkBg} onClick={handleClick}>
-          <StudyCard
-            buildingId={buildingId}
-          />
+          <StudyCard buildingId={buildingId} />
         </div>
       ) : null}
     </div>

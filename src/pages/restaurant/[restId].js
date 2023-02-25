@@ -1,18 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import { db } from "../firebase/firebase";
+import { auth, db } from "../../firebase/firebase";
 import { collection, doc, setDoc, getDoc, getDocs } from "firebase/firestore";
 import Head from "next/head";
-import Image from "next/image";
-import Cart from "../components/cart";
+import Cart from "../../components/cart";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import Navbar from "../components/navbar";
+import Navbar from "../../components/navbar";
 import { useRouter } from "next/router";
 import FoodReviewsCard from "@/components/FoodReviewsCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Restaurant() {
+export default function RestaurantreviewsPage() {
   const [openReview, setOpenReview] = useState(false);
 
   const [renderBool, setRender] = useState(true);
@@ -23,9 +22,13 @@ export default function Restaurant() {
   const { restId } = router.query;
 
   useEffect(() => {
-    const getData = async () => {
-      console.log("restId=", restId);
+    if (!restId) {
+      console.log("No restaurant with id", restId);
+      return;
+    }
 
+    const getData = async () => {
+      console.log("restId =", restId);
       if (restId != undefined) {
         const docRef = doc(db, "restaurants", restId);
         const docSnap = await getDoc(docRef);
