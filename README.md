@@ -65,6 +65,6 @@ For many of us, it was our first time participating in a hackathon and also our 
 
 ## Design Mockups
 
-[Study]('./design_mockups/study.pdf')
+[Study](./design_mockups/study.pdf)
 
-[Food]('./design_mockups/food.pdf')
+[Food](./design_mockups/food.pdf)
