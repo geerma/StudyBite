@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import modalstyles from "@/styles/Modal.module.css";
-import RestaurantCard from "../components/RestaurantCard";
 import RestaurantsList from "./RestaurantsList";
 
 function MapAsset() {

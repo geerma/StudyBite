@@ -108,6 +108,7 @@ export default function RestaurantreviewsPage() {
     }
     order["menu"] = menu;
     setOrder(order);
+    setCart(true);
     console.log("order=", order);
     handleOrder();
   };

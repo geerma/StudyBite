@@ -14,7 +14,6 @@ const RestaurantsList = () => {
   const handleClick = (event) => {
     const targetId = event.target.id;
     setClick(!clickBool);
-    // console.log(`Clicked element id: ${targetId}`);
     setRestid(targetId);
 
     const getData = async () => {
